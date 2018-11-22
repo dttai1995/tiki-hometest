@@ -1,6 +1,7 @@
 package com.hometest.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.hometest.model.*;
 import org.junit.jupiter.api.Test;
@@ -105,7 +106,10 @@ public class ProductTest {
         configurableProduct.addProduct(product1);
         configurableProduct.addProduct(product2);
 //        System.out.println(configurableProduct.showOption());
-        assertEquals("Iphone X 64Gb Black: color - BLACK storage - 64GB \nIphone X 64Gb Black: color - YELLOW storage - 128GB \n", configurableProduct.showOption());
+        assertTrue(configurableProduct.showOption().contains("storage - 64GB"));
+        assertTrue(configurableProduct.showOption().contains("color - BLACK"));
+        assertTrue(configurableProduct.showOption().contains("color - YELLOW"));
+        assertTrue(configurableProduct.showOption().contains("storage - 128GB"));
     }
 
 
